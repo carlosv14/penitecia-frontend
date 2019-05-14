@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Usuarios</h2>
+    <div class="card-text">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let user of users" (click)="onClick(user);">
+            <tr>
+              <td>
+                {{user.nombre}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="selectedUser">
+    <app-edit-user [user] = "selectedUser"></app-edit-user>
+</div>
